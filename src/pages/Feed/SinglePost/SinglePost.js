@@ -15,7 +15,7 @@ class SinglePost extends Component {
   componentDidMount() {
     const postId = this.props.match.params.postId;
 
-    fetch("http://localhost:8080/feed/post/" + postId, {
+    fetch("https://postit-backend.onrender.com/feed/post/" + postId, {
       headers: {
         Authorization: "Bearer " + this.props.token,
       },
@@ -30,7 +30,7 @@ class SinglePost extends Component {
         this.setState({
           title: resData.post.title,
           author: resData.post.creator.name,
-          image: "http://localhost:8080/" + resData.post.imageUrl,
+          image: "https://postit-backend.onrender.com/" + resData.post.imageUrl,
           date: new Date(resData.post.createdAt).toLocaleDateString("en-US"),
           content: resData.post.content,
         });

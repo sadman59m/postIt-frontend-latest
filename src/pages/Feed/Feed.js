@@ -23,7 +23,7 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:8080/feed/status", {
+    fetch("https://postit-backend.onrender.com/feed/status", {
       headers: {
         Authorization: "Bearer " + this.props.token,
       },
@@ -40,7 +40,7 @@ class Feed extends Component {
       .catch(this.catchError);
 
     this.loadPosts();
-    const socket = io("http://localhost:8080");
+    const socket = io("https://postit-backend.onrender.com");
     socket.on("posts", (data) => {
       if (data.action === "create") {
         this.addPost(data.post);
@@ -96,7 +96,7 @@ class Feed extends Component {
       page--;
       this.setState({ postPage: page });
     }
-    fetch("http://localhost:8080/feed/posts?page=" + page, {
+    fetch("https://postit-backend.onrender.com/feed/posts?page=" + page, {
       headers: {
         Authorization: "Bearer " + this.props.token,
       },
@@ -126,7 +126,7 @@ class Feed extends Component {
     event.preventDefault();
     console.log(this.state.status);
     const userStatus = this.state.status;
-    fetch("http://localhost:8080/feed/status", {
+    fetch("https://postit-backend.onrender.com/feed/status", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -173,10 +173,12 @@ class Feed extends Component {
     formData.append("title", postData.title);
     formData.append("content", postData.content);
     formData.append("image", postData.image);
-    let url = "http://localhost:8080/feed/post";
+    let url = "https://postit-backend.onrender.com/feed/post";
     let method = "POST";
     if (this.state.editPost) {
-      url = "http://localhost:8080/feed/post/" + this.state.editPost._id;
+      url =
+        "https://postit-backend.onrender.com/feed/post/" +
+        this.state.editPost._id;
       method = "PUT";
     }
 
@@ -237,7 +239,7 @@ class Feed extends Component {
 
   deletePostHandler = (postId) => {
     this.setState({ postsLoading: true });
-    fetch("http://localhost:8080/feed/post/" + postId, {
+    fetch("https://postit-backend.onrender.com/feed/post/" + postId, {
       method: "DELETE",
       headers: { Authorization: "Bearer " + this.props.token },
     })
