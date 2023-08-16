@@ -21,3 +21,20 @@ Checkout live: https://post-it-frontend-latest-ek3y.vercel.app/
 # Stack Used
 - Frontend: ReactJs, react-router-dom, socket.io client.
 - Backend: node.js, Express, MongoDB, Mongoose, socket.io server.
+
+# Screen Shots
+- Authentication Page
+  ![image](https://github.com/sadman59m/postIt-frontend-latest/assets/79523082/edf20815-fd1a-43ee-adbb-050adb30ffa7)
+
+- Feed page
+  ![image](https://github.com/sadman59m/postIt-frontend-latest/assets/79523082/74f0c716-d9ed-4a0f-8c26-08b99c0cab45)
+
+- Create a new Post
+  ![image](https://github.com/sadman59m/postIt-frontend-latest/assets/79523082/23adbe74-d170-4d80-aa5c-7d846bab0a82)
+
+- View post page
+  ![image](https://github.com/sadman59m/postIt-frontend-latest/assets/79523082/ae33a26a-5aea-4828-bc55-4bc528386b8a)
+
+
+
+
